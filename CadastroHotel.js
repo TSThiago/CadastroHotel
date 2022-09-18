@@ -7,14 +7,14 @@ let enderecoHotel = []
 let telefoneHotel = []
 // Arrays Reserva
 
-let idReserva = []
-let nomeResponsavelReserva = []
-let hotelReservado = []
-let Entrada = []
-let Saida = []
+let idReserva = [1, 2, 3, 4]
+let nomeResponsavelReserva = ["Luiz", "Anderson", "Shoiti", "Zizs"]
+let hotelReservado = ["A", "B", "A", "A"]
+let Entrada = [15, 22, 1, 7]
+let Saida = [18, 23, 2, 7]
 let contadorReserva = 0
 
-FazerReserva()
+MostrarReservasDoHotel(2)
 
 function CadastrarHotel() {
     idHotel.push(prompt("Insira o id do hotel:"))
@@ -37,7 +37,7 @@ function FazerReserva() {
         hotelReservado.push(nomeHotel[idHotel.indexOf(hotelReservar)])
     }
     nomeResponsavelReserva.push(prompt("Insira o nome do reponsável da reserva:"))
-    
+
     let diaEntrada = parseInt(prompt("Insira o dia de entrada:"))
     while (diaEntrada > 30 || diaEntrada < 1) {
         alert("Dia inserido inválido")
@@ -47,8 +47,28 @@ function FazerReserva() {
 
     let diaSaida = parseInt(prompt("Insira o dia de saida:"))
     while ((diaSaida > 30 || diaSaida < diaEntrada)) {
-            alert("Dia inserido inválido")
-            diaSaida = parseInt(prompt("Insira o dia de saida:"))
+        alert("Dia inserido inválido")
+        diaSaida = parseInt(prompt("Insira o dia de saida:"))
     }
     Saida.push(diaSaida)
+}
+
+function MostrarReservasDoHotel(idParametro) {
+    let mensagem = true
+    idHotel.forEach((x, index) => {
+        if (idParametro == x) {
+            hotelReservado.forEach((y, contador) => {
+                if (hotelReservado[contador] == nomeHotel[index]) {
+                    alert("Hotel " + hotelReservado[contador] + " - Responsável: " + nomeResponsavelReserva[contador] + " - Dia da entrada: " + Entrada[contador] + " - Dia da saída: " + Saida[contador])
+                    mensagem = false
+                }
+                return
+            })
+        }
+        if (mensagem == true) {
+            alert("Hotel não encontrado no sistema")
+            mensagem = false
+            return
+        }
+    })
 }
