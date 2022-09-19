@@ -2,9 +2,9 @@
 
 let idHotel = ["1", "2", "3", "4"]
 let nomeHotel = ["A", "B", "C", "D"]
-let categoriaHotel = []
+let categoriaHotel = ["Resort","Resort","Fazenda","Resort"]
 let enderecoHotel = ["SP" ,"RJ", "MG","RS"]
-let telefoneHotel = []
+let telefoneHotel = ["1111-1111","2222-2222","3333-3333","4444-4444"]
 // Arrays Reserva
 
 let idReserva = [1, 2, 3, 4]
@@ -14,7 +14,7 @@ let Entrada = [15, 22, 1, 7]
 let Saida = [18, 23, 2, 7]
 let contadorReserva = 0
 
-MostrarReservaPeloNome("Anderson")
+MostrarHoteisCategoria("Resort")
 
 function CadastrarHotel() {
     idHotel.push(prompt("Insira o id do hotel:"))
@@ -89,6 +89,25 @@ function MostrarReservaPeloNome(nomeParametro){
         if(x == nomeParametro){
             alert("Responsável: " +nomeResponsavelReserva[index]+ "\nHotel: " +hotelReservado[index]+ "\nEndereço: " +enderecoHotel[nomeHotel.indexOf(hotelReservado[index])]+ "\nDia de entrada: " +Entrada[index]+ "\nDia de saída:"+Saida[index])
             
+        }
+    })
+}
+
+function MostrarHoteisCategoria(categoriaParametro){
+    hoteisCategoria = []
+    categoriaHotel.forEach((x,index) => {
+        if(x == categoriaParametro){
+            hoteisCategoria.push(nomeHotel[index])
+        }
+    })
+    return hoteisCategoria
+}
+
+function MudarTelefone(idHotelParametro,telefoneParametro){
+    idHotel.forEach((x,index) => {
+        if(x == idHotelParametro){
+            telefoneHotel[index] = telefoneParametro
+            return
         }
     })
 }
