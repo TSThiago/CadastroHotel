@@ -14,7 +14,7 @@ let Entrada = [15, 22, 1, 7]
 let Saida = [18, 23, 2, 7]
 let contadorReserva = 0
 
-MostrarHoteisCategoria("Resort")
+MudarTelefone(2,"5555-5555")
 
 function CadastrarHotel() {
     idHotel.push(prompt("Insira o id do hotel:"))
