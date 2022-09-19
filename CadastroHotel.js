@@ -9,7 +9,7 @@ let telefoneHotel = []
 
 let idReserva = [1, 2, 3, 4]
 let nomeResponsavelReserva = ["Luiz", "Anderson", "Shoiti", "Zizs"]
-let hotelReservado = ["A", "B", "A", "A"]
+let hotelReservado = ["A", "B", "C", "A"]
 let Entrada = [15, 22, 1, 7]
 let Saida = [18, 23, 2, 7]
 let contadorReserva = 0
@@ -78,8 +78,16 @@ function MostrarReservaDoResponsavel(idReservaParametro){
     idReserva.forEach((x,index) => {
         if(x == idReservaParametro){
             mensagem = true
-            alert("Hotel: " +hotelReservado[index]+ "\nEndereço: " +enderecoHotel[nomeHotel.indexOf(idReservaParametro)]+ "\nDia de entrada: " +Entrada[index]+ "\n Dia de saída:"+Saida[index])
+            alert("Hotel: " +hotelReservado[index]+ "\nEndereço: " +enderecoHotel[nomeHotel.indexOf(hotelReservado[index])]+ "\nDia de entrada: " +Entrada[index]+ "\nDia de saída: "+Saida[index])
         }
     })
 
+}
+
+function MostrarReservaPeloNome(nomeParametro){
+    nomeResponsavelReserva.forEach((x,index) =>{
+        if(x == nomeResponsavelReserva[index]){
+            alert("Hotel: " +hotelReservado[index]+ "\nEndereço: " +enderecoHotel[nomeHotel.indexOf(idReservaParametro)]+ "\nDia de entrada: " +Entrada[index]+ "\nDia de saída:"+Saida[index])
+        }
+    })
 }
