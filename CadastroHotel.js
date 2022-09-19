@@ -3,7 +3,7 @@
 let idHotel = ["1", "2", "3", "4"]
 let nomeHotel = ["A", "B", "C", "D"]
 let categoriaHotel = []
-let enderecoHotel = []
+let enderecoHotel = ["SP" ,"RJ", "MG","RS"]
 let telefoneHotel = []
 // Arrays Reserva
 
@@ -14,7 +14,7 @@ let Entrada = [15, 22, 1, 7]
 let Saida = [18, 23, 2, 7]
 let contadorReserva = 0
 
-MostrarReservasDoHotel(2)
+MostrarReservaDoResponsavel(3)
 
 function CadastrarHotel() {
     idHotel.push(prompt("Insira o id do hotel:"))
@@ -71,4 +71,15 @@ function MostrarReservasDoHotel(idParametro) {
             return
         }
     })
+}
+
+function MostrarReservaDoResponsavel(idReservaParametro){
+    let mensagem = false
+    idReserva.forEach((x,index) => {
+        if(x == idReservaParametro){
+            mensagem = true
+            alert("Hotel: " +hotelReservado[index]+ "\nEndereço: " +enderecoHotel[nomeHotel.indexOf(idReservaParametro)]+ "\nDia de entrada: " +Entrada[index]+ "\n Dia de saída:"+Saida[index])
+        }
+    })
+
 }
